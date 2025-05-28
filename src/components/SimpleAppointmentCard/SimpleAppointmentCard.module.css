@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  /* background-color will be set via inline style */
+  box-shadow: var(--shadow-sm);
+  gap: var(--spacing-md);
+}
+
+.iconWrapper {
+  /* The image shows icon without a distinct background, directly on card bg */
+  /* If a separate bg was needed:
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  */
+}
+
+.details {
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: var(--font-medium);
+  /* color: var(--text-primary); */ /* Set by inline style now */
+  margin-bottom: 2px;
+}
+
+.time {
+  font-size: 0.8rem;
+  /* color: var(--text-secondary); */ /* Set by inline style now */
+}
+
+/* Specific styling for the heart icon on the pinkish cards from image if needed */
+.card[style*="#FEE5E5"] .iconWrapper svg { /* Check for pink bg */
+  color: #E57373; /* Example red for heart */
+}
+.card[style*="#D3E8FF"] .iconWrapper svg { /* Check for light blue bg */
+  color: var(--primary-blue); /* Example blue */
+}

@@ -1,0 +1,16 @@
+.overviewContainer {
+  display: flex; /* Changed to flex */
+  background-color: var(--card-bg);
+  /* border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md); */
+  height: 40%; /* Example height, adjust based on content */
+}
+
+/* Responsive DashboardOverview */
+@media (max-width: 768px) {
+  .overviewContainer {
+    flex-direction: column;
+    padding: var(--spacing-md);
+    min-height: auto;
+  }
+}

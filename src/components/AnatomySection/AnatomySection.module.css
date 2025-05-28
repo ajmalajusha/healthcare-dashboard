@@ -1,0 +1,97 @@
+.anatomySection {
+  flex: 1; /* Takes up available space */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px; /* Ensure it has some minimum width */
+  
+}
+
+.anatomyImage {
+  max-width: 100%;
+  max-height: 320px; /* Adjust as needed */
+  object-fit: contain;
+  border: 2px solid #f6faff;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 5px;
+background-color: #f6faff;
+border-radius: 10px;
+
+}
+
+.indicator {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  
+}
+
+.indicatorText {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  font-size: 0.8rem;
+  font-weight: var(--font-medium);
+  color: white;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Example for healthy status - adapt colors as needed */
+.indicator.healthy .indicatorText {
+  background-color: var(--green-healthy);
+}
+
+.indicatorLine {
+  width: 30px; /* Length of the line */
+  height: 2px;
+  /* background-color will be set by inline style */
+  margin: 0 5px; /* Adjust spacing between text and dot */
+}
+
+.indicatorDot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid; /* border-color will be set by inline style */
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* Specific positioning for indicators (adjust based on your image) */
+/* These values are illustrative, you'll need to fine-tune them. */
+/* .indicator[style*="left: calc(50% - 180px)"] .indicatorLine { margin-left: -35px; margin-right: 5px;}
+.indicator[style*="left: calc(50% - 180px)"] { flex-direction: row-reverse; }
+.indicator[style*="left: calc(50% - 180px)"] .indicatorText { order: 1;}
+.indicator[style*="left: calc(50% - 180px)"] .indicatorLine { order: 2;}
+.indicator[style*="left: calc(50% - 180px)"] .indicatorDot { order: 3;} */
+
+
+/* For indicators on the left, reverse the order */
+.indicator[style*="left: calc(50% -"] { /* Crude check for left-side */
+  flex-direction: row-reverse;
+}
+.indicator[style*="left: calc(50% -"] .indicatorLine {
+  margin-left: 5px;
+  margin-right: -30px; /* Pull it towards the text */
+}
+
+
+@media (max-width: 768px) {
+  .anatomyImage {
+    max-height: 250px;
+  }
+  .indicatorText {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+  .indicatorLine {
+    width: 20px;
+  }
+  .indicatorDot {
+    width: 8px;
+    height: 8px;
+  }
+}

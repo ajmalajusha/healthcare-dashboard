@@ -1,0 +1,105 @@
+.sidebar {
+  grid-area: sidebar;
+  /* background-color:#f6faff; */
+  /* padding: var(--spacing-lg) var(--spacing-md); */
+  display: flex;
+  flex-direction: column;
+  border-radius: 1px solid var(--border-color);
+  padding: 10PX;
+  
+  /* The "General" heading appears to be just spacing above the first item */
+}
+
+.aside{
+  background-color:#f6faff !important;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  padding-left: 5%;
+   border-top-left-radius: 20px;
+   border-bottom-left-radius: 20px;
+}
+
+.generalSection {
+  margin-bottom: var(--spacing-lg); /* Space for "General" if it were text */
+  text-align: center;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm); /* Space between nav items */
+}
+
+.navItem {
+  width: 100%;
+ 
+}
+
+.settings{
+  width: 100%;
+  margin-top: 80%;
+}
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-sm); /* Generous padding */
+  border-radius: var(--border-radius-lg); /* Rounded corners for links */
+  color: var(--text-secondary);
+  font-weight: var(--font-medium);
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover {
+  background-color: var(--light-blue-bg);
+  color: var(--primary-blue);
+}
+
+.navLink.active { /* Style for the active link, e.g., Dashboard */
+  /* background-color: var(--light-blue-bg); */
+  color: var(--primary-blue);
+  font-weight: var(--font-semibold);
+}
+
+.navIcon {
+  margin-right: var(--spacing-md);
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: var(--font-bold);
+  color: var(--primary-blue); /* Match image logo color */
+  margin-right: var(--spacing-xl);
+}
+
+.navLabel {
+  flex-grow: 1;
+}
+
+
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    /* On mobile, the sidebar might be hidden by default and toggled with a button.
+       For this static example, we'll assume it's either always there in the stack
+       or you'd add JS to hide/show it. The grid in App.module.css handles stacking.
+    */
+    border-right: none;
+    border-bottom: 1px solid var(--border-color); /* If stacked on top */
+    padding: var(--spacing-md);
+    height: auto; /* Adjust height if it's part of the stacked layout */
+  }
+ .logo {
+    font-size: 1.5rem;
+    margin-right: var(--spacing-md);
+  }
+  .navLink {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9rem;
+  }
+  .navIcon {
+    margin-right: var(--spacing-sm);
+  }
+}

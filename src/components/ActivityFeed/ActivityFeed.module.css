@@ -1,0 +1,81 @@
+.activityContainer {
+  background-color: var(--card-bg);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-top: 20px;
+}
+
+.header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end; /* Align bars to the bottom */
+  height: 150px; /* Adjust height of chart area */
+  border-bottom: 1px solid var(--border-color); /* X-axis line */
+  padding-bottom: var(--spacing-sm); /* Space for labels below axis */
+}
+
+.barGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* Take full height of chart area */
+  flex: 1; /* Distribute space equally */
+}
+
+.barWrapper {
+  width: 12px; /* Width of the bar (as in image) */
+  background-color: #E9F3FF; /* Light blue background for the bar track */
+  border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0; /* Rounded top */
+  height: 100%; /* Take full available height */
+  display: flex;
+  flex-direction: column-reverse; /* To make bar grow from bottom */
+  overflow: hidden; /* If bar exceeds wrapper, it's clipped */
+}
+
+.bar {
+  background-color: var(--primary-blue); /* Color of the bar itself */
+  width: 100%;
+  /* height is set via inline style */
+  border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+  transition: height 0.5s ease-out;
+}
+
+.dayLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-sm); /* Space between bar and label */
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .activityContainer {
+    padding: var(--spacing-md);
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+  .chart {
+    height: 120px;
+  }
+  .barWrapper {
+    width: 10px;
+  }
+}

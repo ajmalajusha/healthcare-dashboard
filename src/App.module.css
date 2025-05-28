@@ -1,0 +1,41 @@
+.appLayout {
+  display: grid;
+  grid-template-columns: 260px 1fr; /* Sidebar width and main content */
+  grid-template-rows: auto 1fr; /* Header height and content */
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  min-height: 100vh;
+  background-color: #ffffff; /* Matches image background */
+}
+
+.mainContentContainer {
+  grid-area: main;
+  padding: var(--spacing-lg);
+  overflow-y: auto; /* Allows content to scroll if it overflows */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) { /* Tablet */
+  .appLayout {
+    grid-template-columns: 220px 1fr; /* Smaller sidebar */
+  }
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .appLayout {
+    grid-template-columns: 1fr; /* Stack elements */
+    grid-template-rows: auto auto 1fr; /* Header, Sidebar (if shown), Main */
+    grid-template-areas:
+      "header"
+      "main"; /* Sidebar might become a drawer or hidden */
+    /* Note: For a true mobile experience, the sidebar would typically
+       transform into a collapsible menu or a bottom navigation.
+       This example keeps it simple by just adjusting the grid for now.
+       You might hide the sidebar or implement a toggle.
+    */
+  }
+  .mainContentContainer {
+    padding: var(--spacing-md);
+  }
+}

@@ -1,0 +1,105 @@
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #ffffff; /* Overall background from image */
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px; /* Base font size */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Variables - Adjust these to match the image perfectly */
+:root {
+    --primary-blue: #2e3192; /* A common blue, adjust */
+    --light-blue-bg: #E9F3FF; /* Sidebar hover, calendar item bg */
+    --accent-blue: #4A90E2; /* Specific blue from calendar cards */
+    --accent-purple: #7E8CE0; /* Specific purple from calendar cards */
+    --text-primary: #2C3E50; /* Darker text */
+    --text-secondary: #7F8C8D; /* Lighter text / placeholders */
+    --text-tertiary: #ABB5BE; /* Very light text, e.g., calendar day numbers */
+    --border-color: #E0E0E0;
+    --card-bg: #FFFFFF;
+    --sidebar-bg: #FFFFFF;
+    --header-bg: #FFFFFF;
+    --green-healthy: #28A745;
+    --red-issue: #DC3545;
+    --progress-bar-bg: #E9ECEF;
+
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px; /* Common card radius */
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08); /* Common card shadow */
+}
+
+/* Utility Classes (Optional, but can be helpful) */
+.text-center {
+    text-align: center;
+}
+
+.font-bold {
+    font-weight: var(--font-bold);
+}
+
+.font-semibold {
+    font-weight: var(--font-semibold);
+}
+
+.font-medium {
+    font-weight: var(--font-medium);
+}
+
+/* Adjust scrollbar for a cleaner look - Webkit browsers */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c5c5c5;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a5a5a5;
+}
